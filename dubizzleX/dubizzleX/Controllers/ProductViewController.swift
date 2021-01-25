@@ -68,7 +68,7 @@ extension ProductViewController {
 
 extension ProductViewController : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.products?.count ?? 0
+        return viewModel.productCount()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -76,8 +76,8 @@ extension ProductViewController : UITableViewDelegate, UITableViewDataSource{
             fatalError("AddressCell cell is not found")
         }
         
-        let product = viewModel.products![indexPath.row]
-        cell.productItem = product
+        let product = viewModel.productViewModel(index: indexPath.row)
+        cell.productViewModel = product
         cell.selectionStyle = .none
         return cell
     }
@@ -91,8 +91,7 @@ extension ProductViewController : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyBoard.instantiateViewController(identifier: "DetailViewController") as? DetailViewController
-        let product = viewModel.products![indexPath.row]
-        vc?.product = product
+        vc?.deatilViewModel = viewModel.getDetailViewModel(index: indexPath.row)
         self.navigationController?.pushViewController(vc!, animated: true)
     }
 //

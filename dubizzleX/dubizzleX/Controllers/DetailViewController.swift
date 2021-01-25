@@ -13,7 +13,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var lblPrice : UILabel!
     @IBOutlet weak var collectionView : UICollectionView!
     
-    var product : Product?
+    var deatilViewModel : DetailViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,10 +28,8 @@ class DetailViewController: UIViewController {
         self.navigationItem.title = "Detail View"
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
-        if let product = product{
-            self.lblTitle.text = product.name
-            self.lblPrice.text = product.price
-        }
+            self.lblTitle.text = deatilViewModel.name
+            self.lblPrice.text = deatilViewModel.price
     }
 
 }
@@ -39,14 +37,14 @@ class DetailViewController: UIViewController {
 extension DetailViewController : UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return (self.product?.imageUrls.count)!
+        return deatilViewModel.imageCount()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DetailImageCell", for: indexPath) as? DetailCollectionViewCell else {
                 fatalError("AddressCell cell is not found")
         }
-        let productImage = self.product?.imageUrls[indexPath.row]
+        let productImage = self.deatilViewModel.imageUrl(index: indexPath.row)
         cell.imageURL = productImage
         return cell
     }

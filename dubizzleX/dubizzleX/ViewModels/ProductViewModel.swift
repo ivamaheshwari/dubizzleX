@@ -35,4 +35,18 @@ class ProductViewModel: NSObject {
             
         }
     }
+    
+    func productViewModel(index : Int) -> ProductCellViewModel {
+        let product = products![index]
+        return.init(name: product.name, price: product.price, imageURL: product.imageUrlsThumbnails, placeholder: "placeholder")
+    }
+    
+    func productCount() -> Int {
+        return products?.count ?? 0
+    }
+    
+    func getDetailViewModel(index : Int) -> DetailViewModel {
+        let product = products![index]
+        return.init(name: product.name, price: product.price, imageURLs: product.imageUrls)
+    }
 }

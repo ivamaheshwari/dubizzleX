@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE7EFBA025BEF1B7000F73B9 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7EFB9F25BEF1B7000F73B9 /* DetailViewModel.swift */; };
 		FEA3218A25BD10D200B32822 /* ProductViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA3218925BD10D200B32822 /* ProductViewModelTest.swift */; };
 		FEA3219525BD96CD00B32822 /* ProductData.json in Resources */ = {isa = PBXBuildFile; fileRef = FEA3219425BD96CD00B32822 /* ProductData.json */; };
 		FEA3219E25BD97AC00B32822 /* XCTestCase+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA3219925BD978800B32822 /* XCTestCase+JSON.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FE7EFB9F25BEF1B7000F73B9 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		FEA3218525BD0EC600B32822 /* dubizzleX.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = dubizzleX.xctestplan; path = dubizzleX.xcodeproj/dubizzleX.xctestplan; sourceTree = "<group>"; };
 		FEA3218925BD10D200B32822 /* ProductViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModelTest.swift; sourceTree = "<group>"; };
 		FEA3219425BD96CD00B32822 /* ProductData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ProductData.json; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				FED5097225BD0AD60067AEFA /* ProductViewModel.swift */,
+				FE7EFB9F25BEF1B7000F73B9 /* DetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				FED5097325BD0AD60067AEFA /* ProductViewModel.swift in Sources */,
 				FED5093825BD0A4D0067AEFA /* SceneDelegate.swift in Sources */,
 				FED5097925BD0B000067AEFA /* ProductViewController.swift in Sources */,
+				FE7EFBA025BEF1B7000F73B9 /* DetailViewModel.swift in Sources */,
 				FED5097625BD0AED0067AEFA /* ProductModel.swift in Sources */,
 				FEA321D325BEB88300B32822 /* DetailCollectionViewCell.swift in Sources */,
 			);

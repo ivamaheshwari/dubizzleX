@@ -13,12 +13,12 @@ class ProductViewCell: UITableViewCell {
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var price: UILabel!
     
-    var productItem : Product? {
+    var productViewModel : ProductCellViewModel? {
         didSet {
-            if let product = productItem {
+            if let product =  productViewModel{
                 self.productName.text = product.name
                 self.price.text = product.price
-                productImage.setImage(withImageId: product.imageUrlsThumbnails[0], placeholderImage: UIImage(named: "placeholder")!)
+                productImage.setImage(withImageId: product.imageURL[0], placeholderImage: UIImage(named: product.placeholder)!)
             }
         }
     }
@@ -34,4 +34,12 @@ class ProductViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+}
+
+struct  ProductCellViewModel{
+    let name : String
+    let price : String
+    let imageURL : [String]
+    let placeholder : String
+
 }
