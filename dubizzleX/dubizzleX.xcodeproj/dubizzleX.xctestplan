@@ -1,0 +1,31 @@
+{
+  "configurations" : [
+    {
+      "id" : "FAB52541-A971-44E4-8921-90FE2F25E90C",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:dubizzleX.xcodeproj",
+        "identifier" : "FED5098F25BD0C5C0067AEFA",
+        "name" : "dubizzleXTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:dubizzleX.xcodeproj",
+        "identifier" : "FED5099F25BD0C680067AEFA",
+        "name" : "dubizzleXUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
