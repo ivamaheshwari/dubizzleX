@@ -87,7 +87,13 @@ extension UIImageView {
         
         let urlwithPercent = urlString.addingPercentEncoding( withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
         
-        var urlRequest = URLRequest(url: URL(string: urlwithPercent!)!)
+        guard let url_R = URL(string: urlwithPercent!) else {
+            return
+        }
+        
+        var urlRequest = URLRequest(url: url_R)
+        
+        
         
         //common headers
         urlRequest.setValue(ContentType.ENUS.rawValue, forHTTPHeaderField: HTTPHeaderField.acceptLangauge.rawValue)

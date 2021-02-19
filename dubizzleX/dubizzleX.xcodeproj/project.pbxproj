@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FE7EFBA025BEF1B7000F73B9 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7EFB9F25BEF1B7000F73B9 /* DetailViewModel.swift */; };
+		FE861E3C25E06243004D4705 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE861E3B25E06243004D4705 /* NewsModel.swift */; };
 		FEA3218A25BD10D200B32822 /* ProductViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA3218925BD10D200B32822 /* ProductViewModelTest.swift */; };
 		FEA3219525BD96CD00B32822 /* ProductData.json in Resources */ = {isa = PBXBuildFile; fileRef = FEA3219425BD96CD00B32822 /* ProductData.json */; };
 		FEA3219E25BD97AC00B32822 /* XCTestCase+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA3219925BD978800B32822 /* XCTestCase+JSON.swift */; };
@@ -51,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		FE7EFB9F25BEF1B7000F73B9 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		FE861E3B25E06243004D4705 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 		FEA3218525BD0EC600B32822 /* dubizzleX.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = dubizzleX.xctestplan; path = dubizzleX.xcodeproj/dubizzleX.xctestplan; sourceTree = "<group>"; };
 		FEA3218925BD10D200B32822 /* ProductViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModelTest.swift; sourceTree = "<group>"; };
 		FEA3219425BD96CD00B32822 /* ProductData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ProductData.json; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				FED5097525BD0AED0067AEFA /* ProductModel.swift */,
+				FE861E3B25E06243004D4705 /* NewsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE861E3C25E06243004D4705 /* NewsModel.swift in Sources */,
 				FEA321CE25BEB7BE00B32822 /* DetailViewController.swift in Sources */,
 				FED5097E25BD0B2A0067AEFA /* ProductViewCell.swift in Sources */,
 				FED5093A25BD0A4D0067AEFA /* ViewController.swift in Sources */,

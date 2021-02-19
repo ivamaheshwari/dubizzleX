@@ -11,12 +11,12 @@ class APIService : NSObject,Requestable{
     
     static let instance = APIService()
     
-    private let urlString =  "https://ey3f2y0nre.execute-api.us-east-1.amazonaws.com/default/dynamodb-writer"
+    private let urlString =  "https://newsapi.org/v2/top-headlines"
     
     var isLoadDataCalled : Bool = false
-    var completeClosure : (([Product],Bool) -> ())!
+    var completeClosure : (([Article],Bool) -> ())!
     
-    func apiToGetProductData(completion : @escaping ([Product],Bool) -> ()){
+    func apiToGetProductData(country : String,key : String,completion : @escaping ([Article],Bool) -> ()){
         
         self.isLoadDataCalled = true
         //        URLSession.shared.dataTask(with: sourcesURL) { (data, urlResponse, error) in
@@ -28,18 +28,25 @@ class APIService : NSObject,Requestable{
         //                    completion(productData)
         //            }
         //        }.resume()
+        let queryItems = [URLQueryItem(name: "country", value: country), URLQueryItem(name: "apiKey", value: key)]
+        var urlComponent = URLComponents(string: urlString)
+        urlComponent?.queryItems = queryItems
         
-        request(method: .get, url: urlString, params: nil) { (result) in
+        guard let url = urlComponent?.url else{
+            return
+        }
+        
+        request(method: .get, url: url, params: nil) { (result) in
             switch result {
             case .success(let data) :
-                
-                let productData = try? ProductResponce(data: data)
-                let products = productData?.results ?? []
+                print("Here",data)
+                let productData = try? News(data: data)
+                let products = productData?.articles ?? []
                 completion(products,false)
                 break
                 
             case .failure(_):
-                completion([Product](),true)
+                completion([Article](),true)
                 break
             }
             
@@ -48,10 +55,10 @@ class APIService : NSObject,Requestable{
     }
     
     func fetchSuccess() {
-        completeClosure([Product](),false)
+        completeClosure([Article](),false)
     }
     
     func fetchFail(error: Bool) {
-        completeClosure([Product](),true)
+        completeClosure([Article](),true)
     }
 }

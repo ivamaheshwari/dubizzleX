@@ -25,7 +25,7 @@ class ProductViewController: UIViewController {
     }
     
     func setupData(){
-        self.navigationItem.title = "Products"
+        self.navigationItem.title = "News"
     }
 
     // MARK: - UI

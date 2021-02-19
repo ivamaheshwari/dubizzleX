@@ -113,11 +113,11 @@ extension Requestable {
 //        }
 //    }
 
-    internal func request(method: Method, url: String, params: [NSString: Any]? = nil, callback: @escaping Handler) {
+    internal func request(method: Method, url: URL, params: [NSString: Any]? = nil, callback: @escaping Handler) {
 
-        guard let url = URL(string: url) else {
-            return
-        }
+//        guard let url = URL(string: url) else {
+//            return
+//        }
         
         
         let task = URLSession.shared.dataTask(with: url,  completionHandler: { (data, response, error) in

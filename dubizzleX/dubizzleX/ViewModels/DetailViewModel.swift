@@ -8,17 +8,20 @@
 import Foundation
 
 struct DetailViewModel {
-    let name : String
-    let price : String
-    let imageURLs : [String]
-
     
-    func imageCount() -> Int {
-        return imageURLs.count
-    }
+    let title : String
+    let source : String?
+    let author: String?
+    let detail: String?
+    let imageURL: String?
+    let date: Date
+//    let content: String?
     
-    func imageUrl(index : Int) -> String{
-        return imageURLs[index]
+    func getDate() -> String{
+        let fomater = DateFormatter()
+        fomater.dateFormat = "dd MMM,yyyy hh:mm a"
+        return fomater.string(from: date)
+//        print(fomater.string(from: date))
     }
     
 }
